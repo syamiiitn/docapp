@@ -38,7 +38,7 @@ patientdashboardRoutes.put('/profile',(req,res)=>{
 })
 
 //get request from to view all doctors in patient dashboard
-patientdashboardRoutes.get('/viewdoctors',(req,res)=>{
+patientdashboardRoutes.get('/viewdoctors',checkAuthrization,(req,res)=>{
     dbo=getdb();
     dbo.collection('doctorcollection').find().toArray((err,dataArray)=>{
         if(err){

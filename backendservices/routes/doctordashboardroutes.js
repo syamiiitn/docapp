@@ -4,7 +4,7 @@ const initdb=require('../DBConfig').initdb
 const getdb=require('../DBConfig').getdb
 initdb();
 //importing checkAuthorization middleware
-//const checkAuthrization=require('../middleware/checkAuthorization');
+const checkAuthrization=require('../middleware/checkAuthorization');
 var doctordashboardRoutes=exp.Router();
 
 //doctordashboard viewprofile get handler
@@ -38,7 +38,7 @@ doctordashboardRoutes.put('/profile',(req,res)=>{
 })
 
 //get request from to view all doctors in doctor dashboard
-doctordashboardRoutes.get('/viewrequests/:name',(req,res)=>{
+doctordashboardRoutes.get('/viewrequests/:name',checkAuthrization,(req,res)=>{
     dbo=getdb();
     console.log(req.params.name);
 

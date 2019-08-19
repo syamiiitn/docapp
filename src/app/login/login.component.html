@@ -31,7 +31,11 @@
                                 
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-secondary">Login</button>
-                        </div>           
+                        </div>  
+                        <div class="text-center">
+                            <a routerLink="/nav/forgotpwd" class="text-white">Forgot Password</a>
+                        </div>  
+                         <h6 class="text-center text-danger" *ngIf="loginDetails">{{loginDetails}}</h6>      
                     </form>
                    
                 </div>

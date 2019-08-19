@@ -15,18 +15,25 @@ export class DoctorregistrationComponent implements OnInit {
   ngOnInit() {
   }
   doctorReg(data){
+    if(data.puname=="" || data.password=="" || data.email=="" || data.mobileno=="" || data.date=="")
+    {
+     alert("please fill the required fields")
+     }
+     else{
     this.hc.post('nav/register/doctor',data).subscribe((res)=>{
-      
-      if(res["message"]=="registration success")
+
+      if(res["message"]=="Duplicate Username")
+      {
+        alert(res['message'])
+      }
+
+     
+      else
       {
         alert(res["message"])
         this.router.navigate(['nav/login/'])
       }
-      else if(res["message"]=="Duplicate Username")
-      {
-        alert('name already exists')
-      }
     })
-   
+  }
   }
 }

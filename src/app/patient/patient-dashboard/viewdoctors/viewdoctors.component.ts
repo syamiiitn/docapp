@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TransferService } from 'src/app/transfer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-viewdoctors',
@@ -17,21 +18,27 @@ export class ViewdoctorsComponent implements OnInit {
   currentUser:any[];
   searchTerm:string;
   searchWord:string;
-  constructor(private hc:HttpClient,private ts:TransferService) { }
+  constructor(private hc:HttpClient,private ts:TransferService,private router:Router) { }
   
   ngOnInit() {
-    // this.status=this.s.status;
-    // this.check=this.s.check;
-    // for(let x of this.houses.houseList)
-    // {
-    //       this.list.push(x)
-    // }
     this.currentUser=this.ts.currentUsername
     
     this.hc.get("/patientdashboard/viewdoctors").subscribe(
       res=>{
         this.list=res['message']
         console.log(this.list)
+
+          
+      if(res['message']=="unauthorized access")
+      {
+        alert(res['message'])
+        this.router.navigate(['/nav/login'])
+      }
+      
+      else
+      {
+        alert(res['message'])
+      }
       })
   }
   ngOnChanges()
@@ -53,19 +60,15 @@ export class ViewdoctorsComponent implements OnInit {
       "doctorarea":doctorObject.area,
       "doctorspec":doctorObject.specialization,
       "doctorexp":doctorObject.experience
-
-     
-
     }
     console.log(bookappointment)
     this.hc.post('/patientdashboard/viewdoctors',bookappointment).subscribe(res=>{
         alert(res['message'])
+
+      
       }
       
     )
-    // this.b=false;
-    // this.s.valueFromWhomTolet=this.b;
-    
   }
 
 }

@@ -9,6 +9,9 @@ import { PatientregistrationComponent } from './registration/patientregistration
 import { DoctorregistrationComponent } from './registration/doctorregistration/doctorregistration.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ForgotpwdComponent } from './nav/forgotpwd/forgotpwd.component';
+import { OtpComponent } from './nav/otp/otp.component';
+import { ChangepwdComponent } from './nav/changepwd/changepwd.component';
 
 const routes: Routes = [
   {
@@ -37,6 +40,18 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
+      },
+      {
+        path:'forgotpwd',
+        component:ForgotpwdComponent
+      },
+      {
+        path:'otp',
+        component:OtpComponent
+      },
+      {
+        path:'changepwd',
+        component:ChangepwdComponent
       },
       {
         path: 'register',

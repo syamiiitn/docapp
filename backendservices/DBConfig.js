@@ -1,6 +1,6 @@
 //importing mongo client
 const mc=require('mongodb').MongoClient;
-const url="mongodb+srv://yamini:yamini@cluster0-pbaxe.mongodb.net/test?retryWrites=true&w=majority"
+const url="mongodb://yamini:yamini@cluster0-shard-00-00-pbaxe.mongodb.net:27017,cluster0-shard-00-01-pbaxe.mongodb.net:27017,cluster0-shard-00-02-pbaxe.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority"
 var dbo;
 function initdb(){
     mc.connect(url,{useNewUrlParser:true},
@@ -14,6 +14,7 @@ function initdb(){
             }
             
         });
+        
 }
 function getdb(){
     console.log("dbo intailized")

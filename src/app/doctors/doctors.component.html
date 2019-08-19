@@ -1,10 +1,10 @@
 <div class="container mt-5">
-
+<h3 class="text-dark text-center">Our Certified Doctors</h3>
         <div>
                 <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
-<!--                            <input class="float-right mb-3" type="text" name="search" class="text-center form-control mb-3" id="" placeholder="search by Name/ Area/ Specialization" [(ngModel)]='searchterm'>-->
+<input class="float-right mb-3" type="text" name="search" class="text-center form-control mb-3" id="" placeholder="search by Name/ Area/ Specialization" [(ngModel)]='searchWord'>
                     </div>
                     <div class="col-md-3"></div>
                 </div>
@@ -13,13 +13,13 @@
             <thead class="thead-dark text-white">
                 <th>Doctor Name</th>
                 <th>Email</th>
-                <th>Exp</th>
-                <th>Spec</th>
+                <th>Experience</th>
+                <th>Specialization</th>
                 <th>Area</th>
                 
             </thead>
         
-        <tr *ngFor="let obj of list">
+        <tr *ngFor="let obj of list | search : searchWord">
                        
                     <td>{{obj.name}}</td>
                     <td>{{obj.email}}</td>

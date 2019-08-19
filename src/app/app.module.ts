@@ -17,6 +17,9 @@ import { AuthorizationService } from './authorization.service';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { SearchPipe } from './search.pipe';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ForgotpwdComponent } from './nav/forgotpwd/forgotpwd.component';
+import { OtpComponent } from './nav/otp/otp.component';
+import { ChangepwdComponent } from './nav/changepwd/changepwd.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { ContactusComponent } from './contactus/contactus.component';
     DoctorregistrationComponent,
     DoctorsComponent,
     SearchPipe,
-    ContactusComponent
+    ContactusComponent,
+    ForgotpwdComponent,
+    OtpComponent,
+    ChangepwdComponent
   ],
   imports: [
     BrowserModule,

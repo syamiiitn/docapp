@@ -1,13 +1,14 @@
 const jwt=require('jsonwebtoken')
 const secret='secret';
 var checkAuthorization=(req,res,next)=>{
+    console.log(req.headers)
     var token=req.headers['authorization'];
     console.log(req.headers.authorization);
     //console.log(req.headers['authorization'])
     //if token is found ,check for validity
     if(token == undefined)
     {
-        return res.json({"message": "unauthorizated access"})
+        return res.json({"message": "unauthorized access"})
     }
     if(token.startsWith('Bearer '))
     {

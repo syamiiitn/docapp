@@ -67,7 +67,12 @@
     </div>
                 <div class="form-group">
                     <label for="d">Date Of Birth</label>
-                    <input type="date" name="date" id="d" class="form-control" ngModel>
+                    <input type="date" name="date" id="d" #refdate="ngModel" required minlength="5" class="form-control" ngModel>
+                    <div *ngIf="refdate.invalid&&(refdate.dirty||refdate.touched)" class="text-danger">
+                        <div *ngIf="refdate.errors.required">
+                            <p>Date of birth is required</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                 <label for="">Gender</label>

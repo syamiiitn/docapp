@@ -16,19 +16,26 @@ export class PatientregistrationComponent implements OnInit {
   }
 
   patientReg(data){
+    if(data.puname=="" || data.password=="" || data.email=="" || data.mobileno=="" || data.date=="")
+    {
+     alert("please fill the required fields")
+     }
+     else{
     this.hc.post('nav/register/patient',data).subscribe((res)=>{
+     
       
-      if(res["message"]=="registration success")
+      if(res["message"]=="Duplicate Username")
+      {
+        alert(res['message'])
+      }
+      
+      else //if(res["message"]=="registration success")
       {
         alert(res["message"])
         this.router.navigate(['nav/login/'])
       }
-      else if(res["message"]=="Duplicate Username")
-      {
-        alert('name already exists')
-      }
     })
    
   }
-
+  }
 }

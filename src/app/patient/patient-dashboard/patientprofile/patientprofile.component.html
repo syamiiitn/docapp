@@ -1,31 +1,32 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
                 
         </div>
-        <div class="col-md-6 mt-5">
+        <div class="col-md-8 mt-5">
                 <div *ngIf="b">
                     <div *ngFor="let currentUser of currentUser">
-                    <h2 class="text-center bg-info text-light">View Profile</h2>
-                <table class="table table-bordered h6 ">
+                            <h3 class="text-dark text-center">Welcome {{currentUser.puname}}</h3>
+                <table class="table">
+                       
                     <tr>
-                        <td>name</td>
-                        <td>{{currentUser.name}}</td>
+                        <td>Name</td>
+                        <td>{{currentUser.puname}}</td>
                     </tr>
                     <tr>
-                        <td>dob</td>
+                        <td>Date Of Birth</td>
                         <td>{{currentUser.date}}</td>
                     </tr>
                     <tr>
-                        <td>mail</td>
+                        <td>Email</td>
                         <td>{{currentUser.email}}</td>
                     </tr>
                     <tr>
-                        <td>phone</td>
+                        <td>Mobile No</td>
                         <td>{{currentUser.mobileno}}</td>
                     </tr>
                     <tr>
-                        <td>area</td>
+                        <td>Area</td>
                         <td>{{currentUser.area}}</td>
                     </tr>
 
@@ -36,24 +37,24 @@
 
 
                 <div *ngIf="!b">
-                        <h2 class="text-center bg-info text-light">Edit Profile</h2>
+                        <h2 class="text-center bg-dark text-light">Edit Profile</h2>
                         
                     <form #ref="ngForm" (ngSubmit)="submitEditData(ref.value)">
                             <table class="table table-bordered h6">
                                     <tr>
-                                        <td>name</td>
-                                        <td><input type="text" name="name" id="" value="objectToUpdate.name" class="form-control" [(ngModel)]=objectToUpdate.name></td>
+                                        <td>Name</td>
+                                        <td><input type="text" name="puname" id="" value="objectToUpdate.puname" class="form-control" [(ngModel)]=objectToUpdate.puname></td>
                                     </tr>
                                     <tr>
-                                        <td>dob</td>
+                                        <td>Date Of Birth</td>
                                         <td><input type="text" name="date" value="objectToUpdate.date" class="form-control" [(ngModel)]=objectToUpdate.date></td>
                                     </tr>
                                     <tr>
-                                        <td>email</td>
+                                        <td>Email</td>
                                         <td><input type="text" name="email" value="objectToUpdate.email" class="form-control" [(ngModel)]=objectToUpdate.email></td>
                                     </tr>
                                     <tr>
-                                        <td>phone</td>
+                                        <td>Mobile No</td>
                                         <td><input type="text" name="mobileno" value="objectToUpdate.mobileno" class="form-control" [(ngModel)]=objectToUpdate.mobileno></td>
                                     </tr>
                                     <tr>
@@ -67,6 +68,6 @@
                     </form>
                     </div>
         </div>
-        <div class="col-md-3"></div>
+        <div class="col-md-2"></div>
     </div>
 </div>

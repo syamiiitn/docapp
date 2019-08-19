@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="text-center text-warning">OTP Verification</h2>
+    <div class="row mt-3">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form #ref="ngForm" (ngSubmit)="otp(ref.value)">
+              <div class="form-group">
+                  <label for="">Enter OTP</label>
+                  <input type="number" name="OTP" class="form-control" ngModel>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-success">Submit</button>
+              </div>    
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    </div>

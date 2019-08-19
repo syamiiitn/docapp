@@ -20,6 +20,7 @@ export class MakepaymentComponent implements OnInit {
     data.paystatus='payed'
   this.hc.post('/patientdashboard/makepayment',data).subscribe(res=>{
     alert(res['message'])
+    
   })
 }
 

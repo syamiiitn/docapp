@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <table class="table table-bordered">
-        <thead class="bg-info text-white">
+        <thead class="bg-dark text-white">
             <th>patient name</th>
             <th>Email Id</th>
             <th>Mobile No</th>
@@ -19,8 +19,12 @@
             
             <td>
                 <div *ngIf="obj != undefined ">
+                    <td>
                     <button type="submit" class="btn btn-primary" (click)=accept(obj,ref.value,ref1.value)>accept</button>
+                    </td>
+                    <td>
                     <button type="submit" class="btn btn-danger ml-1" (click)=reject(obj)>reject</button>
+                    </td>
                 </div>
             </td>
         </tr>
