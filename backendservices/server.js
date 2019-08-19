@@ -23,6 +23,6 @@ app.use('/doctordashboard',doctordashboardRoutes)
 //using jwtwebtoken
 const jwt=require('jsonwebtoken');
 
-//app.listen(process.env.PORT || 8080,()=>{console.log('server running at portno 8080')})
-const port=4000;
-app.listen(port,()=>console.log(`server running on port ${port}.....`))
+app.listen(process.env.PORT || 8080,()=>{console.log('server running at portno 8080')})
+//const port=4000;
+//app.listen(port,()=>console.log(`server running on port ${port}.....`))
